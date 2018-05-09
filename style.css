@@ -3,3 +3,21 @@ body
     background-color: darkgrey;
 }
 
+panel-heading
+{
+    background-color: gold;
+    font: black;
+    font-weight: bold;
+}
+
+#add-label
+{
+font: black;
+font-weight: bold;
+}
+
+#add-train-button
+{
+background-color: black;
+font: 
+}

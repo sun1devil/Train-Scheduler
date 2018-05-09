@@ -22,9 +22,9 @@ var config = {
     //create varibles for train data and capture via the input IDs//
     var trainName = $("#train-name-input").val().trim();
     var trainDestination = $("#destination-input").val().trim();
-    var firstTrain = moment($("#first-train-input").val().trim(), "DD/MM/YY").format("X");
+    var firstTrain = moment($("#first-train-input").val().trim(), "").format("H HH");
     var trainFrequency = $("#frequency-input").val().trim();
-
+    // Console.log(firstTrain)
       // Create  object for new train data//
   var newTrain = {
     name: trainName,
@@ -69,8 +69,8 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey)
         console.log(firstTrain);
         console.log(trainFrequency);
 
-        // var nextArrival = math
-        // var minutesAway = math
+        // var nextArrival = start time pluss frequency = moments of arrival. closet interal in future is next arrival. 
+        // var minutesAway = next arrival - now or from now to next arrival........ moment().startOf('hour').fromNow();
 
         // Add  each  train's data into the table above input
         $("#train-schedule> tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +
