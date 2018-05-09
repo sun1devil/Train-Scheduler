@@ -34,13 +34,29 @@ var config = {
     var firstTrain = moment($("#first-train-input").val().trim(), "DD/MM/YY").format("X");
     var trainFrequency = $("#frequency-input").val().trim();
 
-      // Creates local "temporary" object for holding employee data
+      // Creates local "temporary" object for holding employee data//
   var newTrain = {
     name: trainName,
     destination: trainDestination,
     trainOne: firstTrain,
     frequency: trainFrequency,
   };
+   // Uploads new train data to the database//
+   database.ref().push(newTrain);
 
+   // Logs everything to console//
+   console.log(newTrain.trainName);
+   console.log(newTrain.trainDestination);
+   console.log(newTrain.firstTrain);
+   console.log(newTrain.trainFrequency);
+
+   // Alert
+  alert("New train has been added to the schedule");
+
+  // Clears all of the text-boxes
+  $("#train-name-input").val("");
+  $("#destination-input").val("");
+  $("#first-train-input").val("");
+  $("#frequency-input").val("");
 
 })
