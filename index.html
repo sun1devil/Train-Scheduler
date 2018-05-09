@@ -11,6 +11,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href= "style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -28,7 +29,7 @@
      <div class="container">
 
         <!-- Jumbotron -->
-        <div class="jumbotron" style="background-color: black; color: white">
+        <div class="jumbotron" style="background-color: maroon; color: white">
           <h1 class="text-center">Train Scheduler</h1>
           <h3 class="text-center">"Going off the rails on a crazy train"</h3>
         </div>
@@ -76,14 +77,14 @@
                     <input class="form-control" id="destination-input" type="text">
                   </div>
                   <div class="form-group">
-                    <label for="start-input">First Train Time (HH:mm-military time)</label>
-                    <input class="form-control" id="first-train-input" type="text">
+                    <label for="first-input">First Train Time (HH:mm-military time)</label>
+                    <input class="form-control" id="first-train-input" type="time">
                   </div>
                   <div class="form-group">
-                    <label for="rate-input">Frequency (min)</label>
-                    <input class="form-control" id="frequency-input" type="text">
+                    <label for="frequency-input">Frequency (min)</label>
+                    <input class="form-control" id="frequency-input" type="number">
                   </div>
-                  <button class="btn btn-primary" id="add-train-button" type="submit">AddTrain</button>
+                  <button class="btn btn-primary" id="add-train-button" type="submit">Add Train</button>
                 </form>
   
               </div>

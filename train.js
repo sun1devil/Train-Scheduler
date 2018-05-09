@@ -1,14 +1,5 @@
 
 
-/* global firebase moment */
-// Steps to complete:
-
-// 1. Initialize Firebase
-// 2. Create button for adding new employees - then update the html + update the database
-// 3. Create a way to retrieve employees from the employee database.
-// 4. Create a way to calculate the months worked. Using difference between start and current time.
-//    Then use moment.js formatting to set difference in months.
-// 5. Calculate Total billed
 
 // Initialize Firebase
 var config = {
@@ -34,29 +25,55 @@ var config = {
     var firstTrain = moment($("#first-train-input").val().trim(), "DD/MM/YY").format("X");
     var trainFrequency = $("#frequency-input").val().trim();
 
-      // Creates local "temporary" object for holding employee data//
+      // Create  object for new train data//
   var newTrain = {
     name: trainName,
     destination: trainDestination,
     trainOne: firstTrain,
     frequency: trainFrequency,
   };
-   // Uploads new train data to the database//
+   // Uploads new train data to firebase//
    database.ref().push(newTrain);
 
-   // Logs everything to console//
-   console.log(newTrain.trainName);
-   console.log(newTrain.trainDestination);
-   console.log(newTrain.firstTrain);
-   console.log(newTrain.trainFrequency);
+   // Logs  data//
+   console.log(newTrain.name);
+   console.log(newTrain.destination);
+   console.log(newTrain.trainOne);
+   console.log(newTrain.frequency   );
 
    // Alert
   alert("New train has been added to the schedule");
 
-  // Clears all of the text-boxes
+  // Clear text-boxes
   $("#train-name-input").val("");
   $("#destination-input").val("");
   $("#first-train-input").val("");
   $("#frequency-input").val("");
 
 })
+
+//Firebase event for adding train to the database and in table above entry
+database.ref().on("child_added", function(childSnapshot, prevChildKey)
+ {
+    console.log(childSnapshot.val());
+  
+    // Store in a variables.
+    var trainName = childSnapshot.val().name;
+    var trainDestination = childSnapshot.val().destination;
+    var firstTrain = childSnapshot.val().trainOne;
+    var trainFrequency = childSnapshot.val().frequency;
+  
+        //log data//
+        console.log(trainName);
+        console.log(trainDestination);
+        console.log(firstTrain);
+        console.log(trainFrequency);
+
+        // var nextArrival = math
+        // var minutesAway = math
+
+        // Add  each  train's data into the table above input
+        $("#train-schedule> tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +
+        trainFrequency + "</td><td>" + "Next Arrival" + "</td><td>" + "Minutes Away" + "</td><td>");
+});
+
