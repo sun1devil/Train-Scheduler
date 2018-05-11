@@ -1,23 +1,65 @@
+
+
+.jumbotron{
+    background-color: maroon;
+    font: bold;
+    color: white;
+}
+#box
+{
+    border-radius: 50%;
+    }
+    h3{
+        font: white;
+    }
 body
 {
     background-color: darkgrey;
 }
 
-panel-heading
+#train-schedule
 {
-    background-color: gold;
-    font: black;
+    background-color: goldenrod;
+    font:white;
     font-weight: bold;
 }
-
-#add-label
+#add-header
 {
-font: black;
-font-weight: bold;
+    background-color: goldenrod;
 }
-
 #add-train-button
 {
-background-color: black;
-font: gold;
+background-color:goldenrod;
+}
+#add-train-background
+{
+    background-color: maroon;
+    font: white;
+}
+#table
+{
+    background-color: maroon;
+    font: white;
+}
+#thead{
+    color:white;
+}
+#form{
+    color: white;
+}
+#first-train-input{
+    background-color: grey;
+}
+#destination-input{
+    background-color: grey;
+}
+#train-name-input{
+    background-color: grey;
+}
+#frequency-input{
+    background-color: grey;
+}
+#schedulehead{
+    color: white;
+    background-color: goldenrod;
 }
