@@ -4,6 +4,8 @@
     background-color: maroon;
     font: bold;
     color: white;
+    text-shadow: 1px 1px grey;
+    
 }
 #box
 {
@@ -21,6 +23,7 @@ body
 {
     background-color: goldenrod;
     font:white;
+    font-
     font-weight: bold;
 }
 #add-header
